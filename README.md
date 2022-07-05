@@ -33,6 +33,7 @@ The application itself is self-explanatory. Navigate the website, add Quizzes, Q
 Database must be seeded before application is run. To do this, delete the migration folder and any pre-existing database with the same name, and from the NuGet Package Manager Console run the following code:
 
 add-migration <migration name>
+
 Update-database
 
 The connection strings in the appsettings.json files for both the front-end and back-end may need to be modified for compatibility.
