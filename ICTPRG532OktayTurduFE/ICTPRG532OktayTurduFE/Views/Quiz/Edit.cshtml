@@ -1,0 +1,54 @@
+﻿@model ICTPRG532OktayTurduFE.Models.Quiz
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Quiz</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.HiddenFor(c => c.QuizID)
+            <div class="form-group">
+                <label asp-for="QuizTitle" class="control-label"></label>
+                <input asp-for="QuizTitle" class="form-control" />
+                <span asp-validation-for="QuizTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuizTopic" class="control-label"></label>
+                <input asp-for="QuizTopic" class="form-control" />
+                <span asp-validation-for="QuizTopic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuizAuthor" class="control-label"></label>
+                <input asp-for="QuizAuthor" class="form-control" />
+                <span asp-validation-for="QuizAuthor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuizDate" class="control-label"></label>
+                <input asp-for="QuizDate" class="form-control" />
+                <span asp-validation-for="QuizDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuizPass" class="control-label"></label>
+                <input asp-for="QuizPass" class="form-control" />
+                <span asp-validation-for="QuizPass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,62 @@
+﻿@model ICTPRG532OktayTurduFE.Models.DTO.QuizCreate
+@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "Create";
+
+    var username = "";
+    var author = "";
+
+
+    if (Context.Session.Keys.Any(c => c.Equals("UserName")))
+    {
+        username = Context.Session.GetString("UserName");
+    }
+}
+
+<h1>Create</h1>
+
+<h4>Create Quiz</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="QuizTitle" class="control-label">Quiz Title</label>
+                <input asp-for="QuizTitle" class="form-control" />
+                <span asp-validation-for="QuizTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuizTopic" class="control-label">Quiz Topic</label>
+                <input asp-for="QuizTopic" class="form-control" />
+                <span asp-validation-for="QuizTopic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuizAuthor" class="control-label">Quiz Author</label>
+                <input asp-for="QuizAuthor" class="form-control" value="@username" />
+                <span asp-validation-for="QuizAuthor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuizDate" class="control-label">Quiz Date</label>
+                <input asp-for="QuizDate" class="form-control" />
+                <span asp-validation-for="QuizDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuizPass" class="control-label">Quiz Pass Percentage</label>
+                <input asp-for="QuizPass" class="form-control" />
+                <span asp-validation-for="QuizPass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
