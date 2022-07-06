@@ -3,13 +3,30 @@ A C# Web Application that allows clients to create quizzes for users, and track 
 
 ### Description
 
-This application's function is to provide the manipulation of database entries through a GUI. The scenario is, through this application, a small workshop will have to track the renting of tools, customer details, and tool details without managing the SQL queries and functions directly. Instead, employees and the employer will simply interact with a GUI.
-
-There are search options in each menu to specifically find and filter an entry. The colour of the application can also be changed through the settings menu.
+This application's function is to allow the ability to provide a platform for quiz creation that can be accessed remotely through any device. The scenario is that the user, which is a quiz creating company, can allow clients to subscribe to this platform, after which these clients can create quizzes for their respective employees.
 
 ### Features
 
+The entire application can be accessed through an interactable web application, which can be accessed from any device when deployed to an appropriate platform such as Azure. All webpages of the application have a navigation bar at the top. Each page has functionality relating to the creation and viewing the details of quizzes, options, and questions. A user must be authenticated through the login page with appropriate details for more functionality, such as deleting and editing data.
 
+Data can be filtered on all respective pages. For example, if a user wants to see the options for only a particular question, then they have to navigate to the questions page and click on the options button next to the respective question that is to be filtered.
+
+The Display Chart page presents a bar chart containing an easy visual representation regarding the number of questions per quizzes. This data can be exported to a .csv file through the same page by pressing the respective button.
+
+A Help page with instructions and pictures have been included for more assistance.
+
+This application was developed as a way to explore different aspects of development in C# and ASP.NET Core 5 such as:
+- MVC architectural pattern
+- Web GUI Design
+- Multiple Inheritance
+- REST architectural style
+- Drag and Drop Features with JavaScript
+- 2-D Graphics
+- Token Authentication and Cookies
+- API and Database Design
+- Cloud Deployment
+- DTO Patterns
+- Web Services
 
 ### Technologies Used
 
@@ -18,7 +35,7 @@ Microsoft SQL Server Management Studio was utilized for the database portion of 
 
 ASP.NET Core 5 was utilized to create the Web API, and the Web Application. Entity Framework was utilized to map objects sent from the front-end to the SQL Database. The entire application is developed in an MVC architectural pattern.
 
-Swagger was used as middleware to test the Back-End. Razor Pages was utilzied to display the front-end. ChartJSCore and CSV Helper was utilized to display a chart with Javascript code and export this data to a .csv file.
+Swagger was used as middleware to test the Back-End. Razor Pages was utilized to display the front-end. ChartJSCore and CSV Helper was utilized to display a chart with JavaScript code and export this data to a .csv file.
 
 Originally deployed to Azure but can still be utilized locally.
 
